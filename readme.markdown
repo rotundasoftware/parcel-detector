@@ -78,3 +78,30 @@ gives this output:
   }
 }
 ```
+
+# methods
+
+``` js
+var detect = require('parcel-detector')
+```
+
+## detect(opts, cb)
+
+Resolve the directory starting at `opts.dir` recursively to find parcels.
+`cb(err, parcels)` is called when the detection is complete with a map of
+package.json paths to package.json contents for package.jsons that are
+determined to be parcels.
+
+If `opts` is a string, treat the string as the `opts.dir`.
+
+# install
+
+With [npm](https://npmjs.org) do:
+
+```
+npm install parcel-detector
+```
+
+# license
+
+MIT
