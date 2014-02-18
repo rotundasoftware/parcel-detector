@@ -2,6 +2,8 @@
 
 recursively detect whether a directory with a package.json is a parcel
 
+[![build status](https://secure.travis-ci.org/rotundasoftware/parcel-detector.png)](http://travis-ci.org/rotundasoftware/parcel-detector)
+
 # parcels
 
 A parcel is a convention for defining a front-end asset management structure.
