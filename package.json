@@ -1,0 +1,45 @@
+{
+  "name": "parcel-detector",
+  "description": "recursively detect whether a directory with a package.json is parcel",
+  "version": "0.0.0",
+  "author": {
+    "name": "Rotunda Software",
+    "email": "support@rotundasoftware.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rotundasoftware/parcel-detector.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rotundasoftware/parcel-detector/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/rotundasoftware/parcel-detector/blob/master/LICENSE"
+    }
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "devDependencies": {
+    "tape": "~2.4.2"
+  },
+  "keywords": [
+    "browserify",
+    "browserify-plugin",
+    "cartero",
+		"asset",
+		"asset manager",
+		"css",
+		"javascript",
+		"html"
+  ],
+  "dependencies": {
+    "findit": "~1.1.0"
+  }
+}
