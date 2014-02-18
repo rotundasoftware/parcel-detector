@@ -1,0 +1,80 @@
+# parcel-detector
+
+recursively detect whether a directory with a package.json is a parcel
+
+# parcels
+
+A parcel is a convention for defining a front-end asset management structure.
+
+A parcel MUST have:
+
+* a "view" field in package.json
+
+A parcel MAY have:
+
+* a "main" field
+* static asset globs that may be read by
+[parcel-map](https://npmjs.org/package/parcel-map)
+
+# example
+
+Suppose we have 3 directories in views/: page1, page2, and page3.
+
+views/page1 is a valid parcel because its package.json has a view field:
+
+``` json
+{
+  "view": "view.html",
+  "main": "main.js"
+}
+```
+
+views/page2 is a also valid parcel because its package.json has a view field:
+
+``` json
+{
+  "view": "render.jade"
+}
+```
+
+views/page2/sub is a valid parcel that is nested inside of views/page2:
+
+``` json
+{
+  "view": "beep.html"
+}
+```
+
+views/page3 is not a valid parcel because it does not have a `"view"` field:
+
+``` json
+{
+  "name": "not a parcel"
+}
+```
+
+Running parcel-detector on this directory structure with this detector:
+
+``` js
+var detect = require('parcel-detector');
+detect(__dirname + '/views', function (err, parcels) {
+    console.log(JSON.stringify(parcels, null, 2));
+});
+```
+
+gives this output:
+
+``` json
+{
+  "/home/substack/projects/parcel-detector/example/views/page1/package.json": {
+    "view": "view.html",
+    "main": "main.js"
+  },
+  "/home/substack/projects/parcel-detector/example/views/page2/package.json": {
+    "view": "render.jade"
+  },
+  "/home/substack/projects/parcel-detector/example/views/page2/sub/package.json": {
+    "view": "beep.html"
+  }
+}
+```
