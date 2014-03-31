@@ -1,7 +1,7 @@
 {
   "name": "parcel-detector",
   "description": "recursively detect whether a directory with a package.json is parcel",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": {
     "name": "Rotunda Software",
     "email": "support@rotundasoftware.com"
@@ -33,11 +33,11 @@
     "browserify",
     "browserify-plugin",
     "cartero",
-		"asset",
-		"asset manager",
-		"css",
-		"javascript",
-		"html"
+    "asset",
+    "asset manager",
+    "css",
+    "javascript",
+    "html"
   ],
   "dependencies": {
     "findit": "~1.1.1"
