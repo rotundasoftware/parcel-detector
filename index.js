@@ -48,7 +48,7 @@ var parsePackage = module.exports.parsePackage = function( pkgDirPath, packageTr
             if( mainPath ) pkg.__mainPath = mainPath;
         }
 
-        callback( null, !! mainPath, pkg );
+        callback( null, !! pkg.__mainPath, pkg );
     } );
 };
 
