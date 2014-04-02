@@ -1,8 +1,8 @@
-# parcel-detector
+# parcel-finder
 
 recursively detect whether a directory with a package.json is a parcel
 
-[![build status](https://secure.travis-ci.org/rotundasoftware/parcel-detector.png)](http://travis-ci.org/rotundasoftware/parcel-detector)
+[![build status](https://secure.travis-ci.org/rotundasoftware/parcel-finder.png)](http://travis-ci.org/rotundasoftware/parcel-finder)
 
 # parcels
 
@@ -55,10 +55,10 @@ views/page3 is not a valid parcel because it does not have a `"view"` field:
 }
 ```
 
-Running parcel-detector on this directory structure with this detector:
+Running parcel-finder on this directory structure with this finder:
 
 ``` js
-var detect = require('parcel-detector');
+var detect = require('parcel-finder');
 detect(__dirname + '/views', function (err, parcels) {
     console.log(JSON.stringify(parcels, null, 2));
 });
@@ -68,14 +68,14 @@ gives this output:
 
 ``` json
 {
-  "/home/substack/projects/parcel-detector/example/views/page1/package.json": {
+  "/home/substack/projects/parcel-finder/example/views/page1/package.json": {
     "view": "view.html",
     "main": "main.js"
   },
-  "/home/substack/projects/parcel-detector/example/views/page2/package.json": {
+  "/home/substack/projects/parcel-finder/example/views/page2/package.json": {
     "view": "render.jade"
   },
-  "/home/substack/projects/parcel-detector/example/views/page2/sub/package.json": {
+  "/home/substack/projects/parcel-finder/example/views/page2/sub/package.json": {
     "view": "beep.html"
   }
 }
@@ -84,7 +84,7 @@ gives this output:
 # methods
 
 ``` js
-var detect = require('parcel-detector')
+var detect = require('parcel-finder')
 ```
 
 ## detect(opts, cb)
@@ -101,7 +101,7 @@ If `opts` is a string, treat the string as the `opts.dir`.
 With [npm](https://npmjs.org) do:
 
 ```
-npm install parcel-detector
+npm install parcel-finder
 ```
 
 # license
