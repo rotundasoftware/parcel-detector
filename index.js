@@ -38,7 +38,7 @@ var parsePackage = module.exports.parsePackage = function( pkgDirPath, packageTr
         }
         catch ( err ) { return callback( new Error( 'While parsing "' + pkgJsonPath + '", ' + err ) ); }
 
-        if( packageTransform ) pkg = packageTransform( pkg );
+        if( packageTransform ) pkg = packageTransform( pkg, pkgDirPath );
       
         var isParcel = false;
 
